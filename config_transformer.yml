@@ -1,0 +1,93 @@
+model:
+  input_dim: 40
+  num_classes: 15
+  d_model: 32
+  nheads: 8
+  num_layers: 6
+  d_ff: 512 
+  dropout: 0.1  
+  max_length: 1379 
+  
+training:
+  folds: 4
+  batch_size: 32
+  learning_rate: 0.0001
+  weight_decay: 0.001
+  max_epochs: 200
+  min_epochs: 50
+  early_stopping_patience: 10
+  early_stopping_start: 50
+
+  lr_scheduler: "plateau"
+  plateau_reduce_factor: 0.5
+  plateau_reduce_patience: 8
+  eta_min: 0.00001
+  T_max: 20
+
+  resume_from_checkpoint: False  
+  checkpoint_path: "path/to/checkpoint.ckpt"  
+  model_folder: "models/"
+  checkpoint_folder: "checkpoints/"
+  lightning_log_folder: "lightning_logs/"
+  log_name: "tf"
+  save_top_k: 3
+
+run:
+  path_to_files: "/data/baproj/dlap/test-files-final/"
+  model_paths: 
+    - "checkpoints/tf-01-30_01-08-00-fold1-epoch=55-val_loss=1.02.ckpt"
+    - "checkpoints/tf-01-30_11-16-56-fold2-epoch=52-val_loss=1.09.ckpt"
+    - "checkpoints/tf-2024-01-29_12-22-47-fold3-epoch=45-val_loss=1.05.ckpt"
+    - "checkpoints/tf-2024-01-29_12-30-04-fold4-epoch=50-val_loss=0.95.ckpt"
+    - "checkpoints/tf-2024-01-29_12-37-21-fold5-epoch=48-val_loss=1.00.ckpt"
+  path_to_save: "/export/home/1rochdi/dlap-group-4/predictions/"
+
+
+data:
+  mean: -32.72772216796875
+  std: 16.83608055114746
+
+  path_to_file_names: "/data/baproj/dlap/TUT-acoustic-scenes-2017-development/evaluation_setup/"  
+  path_to_files: "/data/baproj/dlap/TUT-acoustic-scenes-2017-development/"  
+  desired_sample_rate: 44100   
+  augmentation_chance: 0.4
+  noise_chance: 0
+  aug_strength: 0.0005
+  freq_mask_param: 10  # Bis zu 10 Mel-Bänder werden zufällig maskiert
+  time_mask_param: 10  # Beispielwert, etwa 10% der Zeitdimension des Spektrogramms
+
+  classes:
+    beach: 1
+    bus: 2
+    cafe/restaurant: 3
+    car: 4
+    city_center: 5
+    forest_path: 6
+    grocery_store: 7
+    home: 8
+    library: 9
+    metro_station: 10
+    office: 11
+    park: 12
+    residential_area: 13
+    train: 14
+    tram: 15
+
+  classes_reversed:
+    1: beach
+    2: bus
+    3: cafe/restaurant
+    4: car
+    5: city_center
+    6: forest_path
+    7: grocery_store
+    8: home
+    9: library
+    10: metro_station
+    11: office
+    12: park
+    13: residential_area
+    14: train
+    15: tram
+
+

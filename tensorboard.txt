@@ -1,0 +1,1 @@
+tensorboard --logdir /export/home/1rochdi/dlap-group-4/lightning_logs --port 6020

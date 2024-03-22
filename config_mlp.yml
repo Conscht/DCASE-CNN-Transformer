@@ -1,0 +1,10 @@
+batch_size: 32
+hidden_dim: 128
+num_classes: 15
+learning_rate: 0.001
+max_epochs: 200
+min_epochs: 0
+early_stopping_patience: 10
+
+load_model: true 
+model_folder: "models/"

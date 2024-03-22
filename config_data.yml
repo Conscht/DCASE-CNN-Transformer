@@ -1,0 +1,39 @@
+path_to_audio_files: "/data/baproj/dlap/TUT-acoustic-scenes-2017-development/"
+fold_path: "/data/baproj/dlap/TUT-acoustic-scenes-2017-development/evaluation_setup/"
+
+desired_sample_rate: 44100
+
+classes:
+  beach: 1
+  bus: 2
+  cafe/restaurant: 3
+  car: 4
+  city_center: 5
+  forest_path: 6
+  grocery_store: 7
+  home: 8
+  library: 9
+  metro_station: 10
+  office: 11
+  park: 12
+  residential_area: 13
+  train: 14
+  tram: 15
+
+classes_reversed:
+  1: beach
+  2: bus
+  3: cafe/restaurant
+  4: car
+  5: city_center
+  6: forest_path
+  7: grocery_store
+  8: home
+  9: library
+  10: metro_station
+  11: office
+  12: park
+  13: residential_area
+  14: train
+  15: tram
+

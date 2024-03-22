@@ -1,0 +1,7 @@
+tf-2024-01-17_10:09:18: initial params
+tf-2024-01-17_10:55:17: cranked up nheads from 8 to 16, much slower, slightly worse performance
+tf-2024-01-17_11:28:03: lowered nheads from 8 to 4, little faster, slightly better performance
+                        around epoch 15 compared compared to 8 heads at the same amount of 
+                        epochs, max performance not better
+tf-2024-01-17_12:55:06: cranked up d_ff from 256 to 512, slightly worse performance than 256
+tf-2024-01-17_13:31:22: learning rate 0.00001 bad performance
